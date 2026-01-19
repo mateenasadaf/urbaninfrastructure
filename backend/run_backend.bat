@@ -1,0 +1,13 @@
+@echo off
+REM Creates venv if it doesn't exist, activates it, installs requirements and runs app.py
+if not exist venv (
+  echo Creating virtual environment...
+  python -m venv venv
+)
+echo Activating virtual environment...
+call venv\Scripts\activate.bat
+echo Installing requirements...
+pip install -r requirements.txt
+echo Starting Flask backend...
+python app.py
+pause
